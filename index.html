@@ -1,0 +1,1368 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>锄禾网</title>
+	<link rel="stylesheet" href="util/reset.css">
+	<link rel="stylesheet" href="components/mybody/mybody.css">
+	<link rel="stylesheet" href="components/mybanner/mybanner.css">
+	<link rel="stylesheet" href="components/mynew/mynew.css">
+	<link rel="stylesheet" href="components/mylist/mylist.css">
+	<link rel="stylesheet" href="components/mypage/mypage.css">
+	<link rel="stylesheet" href="components/popwindow/popwindow.css">
+	<link rel="stylesheet" href="components/mypay/mypay.css">
+	<link rel="stylesheet" href="components/mycar/mycar.css">
+	<link rel="stylesheet" href="components/order/order.css">
+	<link rel="stylesheet" href="components/edit/edit.css">
+	<link rel="stylesheet" href="components/myinfo/myinfo.css">
+	<style>
+		body{
+			min-width:1200px;
+			background: rgba(255,255,255,.3);
+			/*height:1600px;*/
+			background: url(images/bg.png) repeat-y center top;
+		}
+		.container{
+			width: 1200px;
+			margin:0 auto;
+		}
+	</style>
+	<!-- myheader -->
+	<style>
+		.myheader{
+			height: 60px;
+		}
+		.myheader>.container{position:relative;}
+		.myheader>.container>.logo{
+			font: 40px/60px '隶书';
+		}
+		.myheader>.container>.search{
+			width: 300px;
+			height: 30px;
+			background-color: rgba(214,187,187,.3);
+			position:absolute;
+			top:15px;
+			right:250px;
+			box-shadow: 1px 1px 1px 1px	 #969898;
+		}
+		.myheader>.container>.search>input{
+			height: 100%;
+			border:0;
+			background:transparent;
+		}
+		.myheader>.container>.search>input:first-child{
+			width: 240px;
+			text-indent: 10px;
+		}
+		.myheader>.container>.search>input:last-child{
+			float: right;
+			margin-right: 10px;
+			color: #fff;
+			font: bold 16px/30px '微软雅黑';
+			cursor: pointer;
+		}
+		.myheader>.container>.search>input:last-child:hover{
+			color:#8b7948;
+		}
+		.myheader>.container>.login,.myheader>.container>.userHead{
+			width: 100px;
+			height: 30px;
+			position: absolute;
+			right:100px;
+			top:15px;
+			font-size:0;
+		}
+		.myheader>.container>.userHead{
+			font: 16px/30px '微软雅黑';
+			cursor:pointer;
+		}
+		.myheader>.container>.login>a{
+			display: inline-block;
+			width: 50px;
+			height: 100%;
+			font: bold 16px/30px '微软雅黑';
+			text-align: center;
+			color:#000;
+			text-shadow: 1px 1px 2px 1px #000;
+		}
+	</style>
+	<!-- 导航 -->
+	<style>
+		.mynav{
+			height: 30px;
+			margin-bottom: 20px;
+		}
+		/* .mynav>.container{
+		}
+		.mynav>.container>ul{} */
+		.mynav>.container>ul>li{
+			display: inline-block;
+			width: 160px;
+			height: 30px;
+			background: rgba(77,86,69,.4);
+			font: 16px/30px '微软雅黑';
+			color:#fff;
+			text-align:center;
+			box-shadow: 1px 1px 1px 1px	 #969898;
+			margin: 0 30px 0 0;
+			cursor:pointer;
+		}
+		.mynav>.container>ul>li:hover{
+			color:#8b7948;
+		}
+		.mynav>.container>.cart{
+			width: 280px;
+			height: 150px;
+			position:fixed;
+			top:60px;
+			right:-250px;
+			z-index: 2;
+			transition: all 0.5s ease;
+			/* box-shadow: 1px 1px 1px 1px	 #969898; */
+		}
+		.mynav>.container>.cart:hover{
+			right:0;
+		}
+		.mynav>.container>.cart>a{
+			display: inline-block;
+			width: 30px;
+			height: 120px;
+			background: #dcb5a6;
+			font: 16px/20px '微软雅黑';
+			text-align:center;
+			color:#fff;
+			position:absolute;
+			left:0;
+			top:0;
+			padding-top:10px;
+		}
+		/* .mynav>.container>.cart>a{
+		
+		} */
+		.mynav>.container>.cart>a:hover{
+			color:#827948;
+		}
+		.mynav>.container>.cart>.cart_list{
+			display: inline-block;
+			width: 250px;
+			height: 400px;
+			background: #d2b5a6;
+			position:absolute;
+			top:0;
+			right:0
+		}
+		.mynav>.container>.cart>.cart_list>ul>li{
+			width: 100%;
+			height: 50px;
+			font:14px/50px '微软雅黑';
+		}
+		.mynav>.container>.cart>.cart_list>ul>li>span{
+			width: 80px;
+			text-align:center;
+			display: inline-block;
+			cursor:pointer;
+			color: #000;
+		}
+		.mynav>.container>.cart>.cart_list>ul>li>span:last-child:hover{
+			text-decoration:underline;
+		}
+	</style>
+	<!-- 中间内容 -->
+	<!-- <style>
+		.mybody{
+			width: 100%;
+			height: 500px;
+			background: rgba(0,0,0,.4);
+			margin-top: 20px;
+		}
+	</style> -->
+	<!-- 页脚 -->
+	<style>
+		.myfooter{
+			height: 100px;
+		}
+		.myfooter>.container{
+			font: 14px/30px '微软雅黑';
+		}
+		.myfooter>.container>.copyright{
+			width: 500px;
+			height: 60px;
+			margin: 25px 50px;
+			float: left;
+		}
+		.myfooter>.container>.copyright>a{
+			color:#000;
+		}
+		.myfooter>.container>.code{
+			width: 400px;
+			height: 90px;
+			margin:10px 20px;
+			float:left;
+		}
+		.myfooter>.container>.return{
+			width: 80px;
+			height:80px;
+			border-radius:40px;
+			background:#dcb5a6;
+			position:fixed;
+			right:0;
+			bottom:20px;
+			font: bold 20px/30px '微软雅黑';
+			text-align: center;
+			cursor:pointer;
+			transition: all 5s ease;
+		}
+		.myfooter>.container>.return>a{
+			color:#fff;
+		}
+		.myfooter>.container>.return:hover>a{
+			color:#8b7948;
+		}
+	</style>
+</head>
+<body>
+	<script src="util/vue.js"></script>
+	<script src="util/vuex.js"></script>
+	<script src="util/vue-resource.js"></script>
+	<script src="util/jquery.min.js"></script>
+	<div id="app">
+		<myheader></myheader>
+		<mynav></mynav>
+		<mybody v-if="$store.state.seller_store.changeIndex==1"></mybody>
+		<mynew  v-else-if="$store.state.seller_store.changeIndex==2"></mynew>
+		<mylist v-else-if="$store.state.seller_store.changeIndex==4"></mylist>
+		<myfooter></myfooter>
+	</div>
+	<template id="myheader">
+		<div class="myheader common">
+			<div class="container">
+				<div class="logo">锄禾网</div>
+				<div class="search">
+					<input type="search" placeholder="商家，美食">
+					<input type="button" value="搜索">
+				</div>
+				<div class="login" v-if="!$store.state.seller_store.curUser">
+					<a href="logReg/login.html">登录</a>
+					<a href="logReg/register.html">注册</a>
+				</div>
+				<div class="userHead" v-else="$store.state.seller_store.curUser" v-text="$store.state.seller_store.curUser.username" @click="changePage">
+				
+				</div>
+			</div>
+		</div>
+	</template>
+	<script>
+		var myheader=Vue.extend({
+			template:'#myheader',
+			methods:{
+				changePage:function(){ 
+					if(this.$store.state.seller_store.curUser.usertype=='client'){
+						this.$store.commit('seller_store/changePage',4);
+						this.$store.state.seller_store.listcurShow='info';
+					}else{
+						for(var i=0;i<this.$store.state.seller_store.sellers.length;i++){
+							if(this.$store.state.seller_store.curUser.seller_id==this.$store.state.seller_store.sellers[i].seller_id){
+								location.href="seller/seller.html?"+"txt="+encodeURI(JSON.stringify(this.$store.state.seller_store.sellers[i]));
+							}
+						}
+					}
+				}
+			}
+		});
+		Vue.component('myheader',myheader);
+	</script>
+	<template id="mynav">
+		<div class="mynav common">
+			<div class="container">
+				<ul>
+					<li @click="changePage(1)">首页</li>
+					<li @click="changePage(2)">今日新单</li>
+					<!-- <li @click="changePage(3)">哈哈哈</li> -->
+				</ul>
+				<div class="cart" v-show="$store.state.seller_store.curUser.usertype=='client'&&$store.state.seller_store.cartShow"  @click="changePage(4)">
+					<a href="#">我的购物车</a>
+					<div class="cart_list">
+						<ul>
+							<li v-for="value in cartList">
+								<span v-for="item in value" v-text="item"></span>
+								<span>我的购物车</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</template>
+	<script>
+		var mynav=Vue.extend({
+			template:'#mynav',
+			data:function(){
+				return {
+					cartList:[
+						{food_name:'粥末甜筒',food_price:'¥23'},
+						{food_name:'法师蛋糕',food_price:'¥45'}
+					]
+				};
+			},
+			methods:{
+				changePage:function(index){ 
+					this.$store.commit('seller_store/changePage',index);
+					if(index==4)
+						this.$store.state.seller_store.cartShow=false;
+					else
+						this.$store.state.seller_store.cartShow=true;
+				}
+			}
+		});
+		Vue.component('mynav',mynav);
+	</script>
+	
+	<!-- mybody组件 -->
+	<template id="mybody"  v-for="item in seller">
+		<div class="mybody common">
+			<div class="container">
+				<!-- <dl>               
+					<dt>附近商家</dt>
+					<dd v-for="(value,i) in seller.names" v-text="value" @mouseover="showIntro(i)" :class={intro_active:i==index}></dd>
+					<dd>...</dd>
+				</dl> -->
+				<!-- <div class="intro" v-if="i==index" v-for="(value,i) in seller.intro" >
+					<span>-商家简介-</span><br>
+					<span v-text="value"></span>
+				</div> -->
+				<dl>
+					<dt>分类</dt>
+					<dd @mouseover="showList(1)" @mouseout="hideList">
+						美食
+						<div class="tab" v-show="list==1"><a href="#">火锅1</a><a href="#">牛排</a><a href="#">自助</a><a href="#">咖啡</a>
+						<a href="#">奶茶</a><a href="#">麻辣烫</a><a href="#">过桥米线</a><a href="#">酸辣粉</a>
+						<a href="#">烧烤烤肉</a><a href="#">川湘菜</a><a href="#">烤鱼</a><a href="#">麻辣香锅</a>
+						<a href="#">快餐</a><a href="">猪脚饭</a></div>
+					</dd>
+					<dd @mouseover="showList(2)" @mouseout="hideList">
+						酒店/客栈
+						<div class="tab" v-show="list==2"><a href="#">小租</a><a href="#">一星级酒店</a><a href="#">二星级酒店</a><a href="#">三星级酒店</a>
+						<a href="#">三星级酒店</a><a href="#">四星级酒店</a><a href="#">五星级酒店</a><a href="#">六星级酒店</a>
+						<a href="#">七星级酒店</a><a href="#">八星级酒店</a><a href="#">九星级酒店</a><a href="#">十星级酒店</a>
+						<a href="#">十一星际</a><a href="">长租</a></div>
+					</dd>
+					<dd @mouseover="showList(3)" @mouseout="hideList">
+						ktv
+						<div class="tab" v-show="list==3"><a href="#">火锅3</a><a href="#">牛排</a><a href="#">自助</a><a href="#">咖啡</a>
+						<a href="#">奶茶</a><a href="#">麻辣烫</a><a href="#">过桥米线</a><a href="#">酸辣粉</a>
+						<a href="#">烧烤烤肉</a><a href="#">川湘菜</a><a href="#">烤鱼</a><a href="#">麻辣香锅</a>
+						<a href="#">快餐</a><a href="">猪脚饭</a></div>
+					</dd>
+					<dd @mouseover="showList(4)" @mouseout="hideList">
+						代金券
+						<div class="tab" v-show="list==4"><a href="#">火锅4</a><a href="#">牛排</a><a href="#">自助</a><a href="#">咖啡</a>
+						<a href="#">奶茶</a><a href="#">麻辣烫</a><a href="#">过桥米线</a><a href="#">酸辣粉</a>
+						<a href="#">烧烤烤肉</a><a href="#">川湘菜</a><a href="#">烤鱼</a><a href="#">麻辣香锅</a>
+						<a href="#">快餐</a><a href="">猪脚饭</a></div>
+					</dd>
+					<dd @mouseover="showList(5)" @mouseout="hideList">
+						电影院/在线选座
+						<div class="tab" v-show="list==5"><a href="#">火锅5</a><a href="#">牛排</a><a href="#">自助</a><a href="#">咖啡</a>
+						<a href="#">奶茶</a><a href="#">麻辣烫</a><a href="#">过桥米线</a><a href="#">酸辣粉</a>
+						<a href="#">烧烤烤肉</a><a href="#">川湘菜</a><a href="#">烤鱼</a><a href="#">麻辣香锅</a>
+						<a href="#">快餐</a><a href="">猪脚饭</a></div>
+					</dd>
+					<dd @mouseover="showList(6)" @mouseout="hideList">
+						生活服务
+						<div class="tab" v-show="list==6"><a href="#">火锅6</a><a href="#">牛排</a><a href="#">自助</a><a href="#">咖啡</a>
+						<a href="#">奶茶</a><a href="#">麻辣烫</a><a href="#">过桥米线</a><a href="#">酸辣粉</a>
+						<a href="#">烧烤烤肉</a><a href="#">川湘菜</a><a href="#">烤鱼</a><a href="#">麻辣香锅</a>
+						<a href="#">快餐</a><a href="">猪脚饭</a></div>
+					</dd>
+				</dl>
+				<mybanner></mybanner>
+				<div class="hot">
+					<span>--热门--</span>
+					<ul>
+						<li v-for="(value,i) in sellers" @click="sendSeller(i)" v-show="i>=$store.state.seller_store.startIndex&&i<$store.state.seller_store.endIndex">  <!--v-show=""  显示前8个商家-->
+							<img :src="value.seller_pic" alt="">    <!-- 商家头像 -->
+							<a v-text="value.seller_acti"></a>  <!-- 商家活动 -->
+							<a v-text="value.delivery_time"></a>  <!-- 配送时间 -->
+							<div class="hot_intro">
+								<a v-text="value.seller_name"></a>  <!-- 商家名称 -->
+								<a v-text="value.seller_sales"></a>
+							</div>
+							<!-- <span v-show="showIndex==i" @mouseout="hideName">
+								<a href="#" v-text="value.name"></a><br>
+								<a v-text="value.storeName"></a>
+							</span> -->
+						</li>
+					</ul>
+					<mypage></mypage>
+				</div>
+				
+				<div class="like">
+					<span>--猜你喜欢--</span>
+					<ul>
+						<li v-for="(value,i) in foods" @click="sendFood(i)" :data-intro="value.food_intro">
+							<img :src="value.food_pic" alt="" @mouseover="showName(i)">
+							<!-- <span v-show="showIndex==i" @mouseout="hideName">
+								<a href="#" v-text="value.name"></a><br>
+								<a v-text="value.storeName"></a>
+							</span> -->
+							<span>
+								<a href="#" v-text="value.food_name"></a>
+								<a href="#" v-text="value.seller_name"></a>
+							</span>
+						</li>
+					</ul>
+				</div>
+				<!-- <mypage></mypage> -->
+			</div>
+		</div>
+	</template>
+
+	<!-- mybanner组件 -->
+	<template id="mybanner">
+		<div class="mybanner">
+			<a href="#"  v-for="(item,i) in aImgs" :class='[{show:curIndex==i&&lastIndex!=-1},{hide:lastIndex==i}]' @mouseover="stop" @mouseout="start">
+				<img :src="item" alt="">
+			</a>
+		</div>
+	</template>
+
+	<!-- mynew组件 -->
+	<template id="mynew">
+		<div class="mynew container">
+			<div class="new_head">今日新单</div>
+			<ul>
+				<li v-for="(value,i) in foods" @click="sendFood(i)">
+					<div class="my_new_img" @mouseover="showIntro(i)" @mouseout="hideIntro">
+						<img :src="value.food_pic" alt="">
+						<p v-text="value.food_intro" v-show="i==showIndex"></p>
+					</div>
+					<div class="discribe">
+						<a v-text="value.seller_name"></a>
+						<a v-text="value.food_name"></a>
+						<span v-text="value.food_sales"></span>
+						<div class="food_price">
+							<span v-text="value.food_old_price"></span>
+							<span v-text="value.food_price"></span>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</template>
+	<!-- myfooter组件 -->
+	<template id="myfooter">
+		<div class="myfooter common">
+			<div class="container">
+				<div class="copyright">
+					<a href="#">联系我们</a>  <a href="#">关于我们</a><br>    
+					@copyright 2017江西农业大学软件学院h5班第九组 
+				</div>
+				<div class="code">
+					扫描下方二维码，加入我们吧
+				</div>
+				<div class="return" v-show="isShow"><a href="#app">^<br>TOP</a></div>
+			</div>
+		</div>
+	</template>
+	<script>
+		var myfooter=Vue.extend({
+			template:'#myfooter',
+			data:function(){
+				return {
+					isShow:false
+				};
+			},
+			created:function(){
+
+			},
+			methods:{
+				changeIsShow:function(){
+					var scrollTop;
+					if(document.body.scrollTop)
+						scrollTop=document.body.scrollTop;
+					else
+						scrollTop=document.documentElement.scrollTop;
+					// console.log(scrollTop);
+					if(scrollTop>=100){
+						this.isShow=true;
+					}else{
+						this.isShow=false;
+					}
+				}
+			},
+			mounted:function() {
+			  window.addEventListener('scroll', this.changeIsShow);  //监听滚动条事件
+			}
+		});
+		Vue.component('myfooter',myfooter);
+	</script>
+	<!-- mypage组件 -->
+	<template id="mypage">
+		<div class="mypage">
+			<ul>
+				<li @click="changePage(curPage-1)">上一页</li>
+				<li v-text="curPage"></li>
+				<li @click="changePage(curPage+1)">下一页</li>
+			</ul>
+		</div>
+	</template>
+	<!-- mylist组件 -->  
+	<template id="mylist">
+		<div class="mylist container">
+			<div class="mylist_nav">
+				<ul>
+					<li @click="changeList('order')">我的订单</li>
+					<li @click="changeList('car')">我的购物车</li>
+					<li @click="changeList('info')">我的信息</li>
+				</ul>
+				<mycar v-show="$store.state.seller_store.listcurShow=='car'"></mycar>
+				<order v-show="$store.state.seller_store.listcurShow=='order'"></order>
+				<myinfo v-show="$store.state.seller_store.listcurShow=='info'"></myinfo>
+			</div>
+		</div>
+	</template>
+
+	<!-- popwindow组件 -->
+	<template id="popwindow">
+		<transition name="fade">
+			<div class="overlay" v-show="isShow">
+				<div class="content">
+					<slot name="header"></slot>
+					<slot name="body"></slot>
+					<slot name="footer"></slot>
+				</div>
+			</div>
+		</transition>
+	</template>
+
+	<!-- myPay组件 -->
+	<template id="myPay">
+		<popwindow :is-show="isShow">
+			<div slot="header" class="myPay-header">
+				<span @click="closeWindow">×</span>
+				<h4>请输入支付密码</h4>
+			</div>
+			<div slot="body" class="myPay-body">
+					<input type="password" maxlength="1" autofocus>
+					<input type="password" maxlength="1">
+					<input type="password" maxlength="1">
+					<input type="password" maxlength="1">
+					<input type="password" maxlength="1">
+					<input type="password" maxlength="1">
+			</div>
+			<div slot="footer" class="myPay-footer">
+				<input type="button" value="确定" @click="closeWindow">
+				<input type="button" value="取消" @click="closeWindow">
+			</div>
+		</popwindow>
+	</template>
+
+	<!-- myCar组件 -->
+	<template id="myCar">
+		<div>
+			<h2 v-text="msg"></h2>
+			<div class="header">
+				<span v-for="value in headers" v-text="value"></span>
+			</div>
+			<hr>
+			<table class="myCar">
+				<tbody>
+					<tr v-for="(item,i) in items">
+						<td><input type="checkbox" v-model="item.selected" class="checkbox" @click="choice"></td>
+						<td><img :src="item.pic" alt="" id="img"></td>
+						<td><span v-text="item.intro"></span></td>
+						<td>
+							<span v-text="'￥'+item.price"></span>
+							<span v-text="'￥'+item.oldPrice"></span>
+						</td>
+						<td>
+							<span @click="down(i)">-</span>
+							<input type="text" :value="item.num">
+							<span @click="up(i)">+</span>
+						</td>
+						<td><span v-text="'￥'+item.totalPrice"></span></td>
+						<td><a href="#" @click="del(i)">删除</a></td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="footer">
+				<input type="checkbox" id="checkAll" @click="checkAll">
+				<ul>
+					<li>全选</li>
+					<li>合计：</li>
+					<li><span v-text="sumPrice"></span></li>
+					<li @click="mypay">结算</li>
+				</ul>
+			</div>
+			<mypay :is-show="isShow"  @close-window="closeWindow"></mypay>
+		</div>
+	</template>
+
+	<!-- order组件 -->
+	<template id="order">
+		<div class="order">
+			<span v-text="msg"></span>
+			<ul>
+				<li v-for="(value,i) in contents">
+					<a href="#" @click="del(i)">取消订单</a>
+					<img :src="value.pic" alt="">
+					<span v-text="value.intro" class="intro"></span>
+					<span v-text="value.price" class="price"></span>
+					
+				</li>
+			</ul>
+		</div>
+	</template>
+
+	<!-- edit -->
+	<template id="edit">
+			<popwindow :is-show="isShow">
+				<div slot="header" class="edit-header">
+					<span>编辑资料</span>
+					<span @click="closeWindow">×</span>
+				</div>
+				<div slot="body" class="edit-body">
+					<div><span>username:</span><input type="text" v-model="myItem.username"></div>
+					<div><span>password:</span><input type="text" v-model="myItem.password"></div>
+					<div><span>sex:</span><input type="text" v-model="myItem.sex"></div>
+					<div><span>address:</span><input type="text" v-model="myItem.address"></div>
+					<div><span>tel:</span><input type="text" v-model="myItem.tel"></div>
+				</div>
+				<div slot="footer" class="edit-footer">
+					<input type="button" value="保存" @click="save">
+					<input type="button" value="取消" @click="closeWindow">
+				</div>
+			</popwindow>
+		</template>
+	
+	<!-- myinfo -->
+	<template id="myinfo">
+		<div class="myinfo">
+			<span v-text="msg"></span>
+			<span>×</span>
+			<a href="#" @click="edit">编辑...</a>
+			<div class="con">
+				<div><span>我的名字:</span><span v-text="userData.username"></span></div>
+				<div><span>登录密码:</span><span v-text="userData.password"></span></div>
+				<div><span>性别:</span><span v-text="userData.sex"></span></div>
+				<div><span>收货地址:</span><span v-text="userData.address"></span></div>
+				<div><span>电话号码:</span><span v-text="userData.tel"></span></div>
+				<!-- <div><span>type:</span><span v-text="type"></span></div> -->
+			</div>
+			<edit :is-show="isShow" @close-window="closeWindow" @update-user="updateUser" :item="userData"></edit>
+		</div>
+	</template>
+
+	<script src="store/seller_store.js"></script>
+	<script src="store/store.js"></script>
+	
+	<script src="components/mybody/mybody.js"></script>
+	<script src="components/mybanner/mybanner.js"></script>
+	<script src="components/mynew/mynew.js"></script>
+	<script src="components/mylist/mylist.js"></script>
+	<script src="components/mypage/mypage.js"></script>
+	<script src="components/popwindow/popwindow.js"></script>
+	<script src="components/mypay/mypay.js"></script>
+	<script src="components/mycar/mycar.js"></script>
+	<script src="components/order/order.js"></script>
+	<script src="components/myinfo/myinfo.js"></script>
+	<script src="components/edit/edit.js"></script>
+	<script>
+		var vm=new Vue({
+			el:'#app',
+			store:store,
+			data:function(){
+				return {
+				};
+			},
+			methods:{
+			}
+		});
+	</script>
+</body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>锄禾网</title>
+	<link rel="stylesheet" href="util/reset.css">
+	<link rel="stylesheet" href="components/mybody/mybody.css">
+	<link rel="stylesheet" href="components/mybanner/mybanner.css">
+	<link rel="stylesheet" href="components/mynew/mynew.css">
+	<link rel="stylesheet" href="components/mylist/mylist.css">
+	<link rel="stylesheet" href="components/mypage/mypage.css">
+	<link rel="stylesheet" href="components/popwindow/popwindow.css">
+	<link rel="stylesheet" href="components/mypay/mypay.css">
+	<link rel="stylesheet" href="components/mycar/mycar.css">
+	<link rel="stylesheet" href="components/order/order.css">
+	<link rel="stylesheet" href="components/edit/edit.css">
+	<link rel="stylesheet" href="components/myinfo/myinfo.css">
+	<style>
+		body{
+			min-width:1200px;
+			background: rgba(255,255,255,.3);
+			/*height:1600px;*/
+			background: url(images/bg.png) repeat-y center top;
+		}
+		.container{
+			width: 1200px;
+			margin:0 auto;
+		}
+	</style>
+	<!-- myheader -->
+	<style>
+		.myheader{
+			height: 60px;
+		}
+		.myheader>.container{position:relative;}
+		.myheader>.container>.logo{
+			font: 40px/60px '隶书';
+		}
+		.myheader>.container>.search{
+			width: 300px;
+			height: 30px;
+			background-color: rgba(214,187,187,.3);
+			position:absolute;
+			top:15px;
+			right:250px;
+			box-shadow: 1px 1px 1px 1px	 #969898;
+		}
+		.myheader>.container>.search>input{
+			height: 100%;
+			border:0;
+			background:transparent;
+		}
+		.myheader>.container>.search>input:first-child{
+			width: 240px;
+			text-indent: 10px;
+		}
+		.myheader>.container>.search>input:last-child{
+			float: right;
+			margin-right: 10px;
+			color: #fff;
+			font: bold 16px/30px '微软雅黑';
+			cursor: pointer;
+		}
+		.myheader>.container>.search>input:last-child:hover{
+			color:#8b7948;
+		}
+		.myheader>.container>.login,.myheader>.container>.userHead{
+			width: 100px;
+			height: 30px;
+			position: absolute;
+			right:100px;
+			top:15px;
+			font-size:0;
+		}
+		.myheader>.container>.userHead{
+			font: 16px/30px '微软雅黑';
+			cursor:pointer;
+		}
+		.myheader>.container>.login>a{
+			display: inline-block;
+			width: 50px;
+			height: 100%;
+			font: bold 16px/30px '微软雅黑';
+			text-align: center;
+			color:#000;
+			text-shadow: 1px 1px 2px 1px #000;
+		}
+	</style>
+	<!-- 导航 -->
+	<style>
+		.mynav{
+			height: 30px;
+			margin-bottom: 20px;
+		}
+		/* .mynav>.container{
+		}
+		.mynav>.container>ul{} */
+		.mynav>.container>ul>li{
+			display: inline-block;
+			width: 160px;
+			height: 30px;
+			background: rgba(77,86,69,.4);
+			font: 16px/30px '微软雅黑';
+			color:#fff;
+			text-align:center;
+			box-shadow: 1px 1px 1px 1px	 #969898;
+			margin: 0 30px 0 0;
+			cursor:pointer;
+		}
+		.mynav>.container>ul>li:hover{
+			color:#8b7948;
+		}
+		.mynav>.container>.cart{
+			width: 280px;
+			height: 150px;
+			position:fixed;
+			top:60px;
+			right:-250px;
+			z-index: 2;
+			transition: all 0.5s ease;
+			/* box-shadow: 1px 1px 1px 1px	 #969898; */
+		}
+		.mynav>.container>.cart:hover{
+			right:0;
+		}
+		.mynav>.container>.cart>a{
+			display: inline-block;
+			width: 30px;
+			height: 120px;
+			background: #dcb5a6;
+			font: 16px/20px '微软雅黑';
+			text-align:center;
+			color:#fff;
+			position:absolute;
+			left:0;
+			top:0;
+			padding-top:10px;
+		}
+		/* .mynav>.container>.cart>a{
+		
+		} */
+		.mynav>.container>.cart>a:hover{
+			color:#827948;
+		}
+		.mynav>.container>.cart>.cart_list{
+			display: inline-block;
+			width: 250px;
+			height: 400px;
+			background: #d2b5a6;
+			position:absolute;
+			top:0;
+			right:0
+		}
+		.mynav>.container>.cart>.cart_list>ul>li{
+			width: 100%;
+			height: 50px;
+			font:14px/50px '微软雅黑';
+		}
+		.mynav>.container>.cart>.cart_list>ul>li>span{
+			width: 80px;
+			text-align:center;
+			display: inline-block;
+			cursor:pointer;
+			color: #000;
+		}
+		.mynav>.container>.cart>.cart_list>ul>li>span:last-child:hover{
+			text-decoration:underline;
+		}
+	</style>
+	<!-- 中间内容 -->
+	<!-- <style>
+		.mybody{
+			width: 100%;
+			height: 500px;
+			background: rgba(0,0,0,.4);
+			margin-top: 20px;
+		}
+	</style> -->
+	<!-- 页脚 -->
+	<style>
+		.myfooter{
+			height: 100px;
+		}
+		.myfooter>.container{
+			font: 14px/30px '微软雅黑';
+		}
+		.myfooter>.container>.copyright{
+			width: 500px;
+			height: 60px;
+			margin: 25px 50px;
+			float: left;
+		}
+		.myfooter>.container>.copyright>a{
+			color:#000;
+		}
+		.myfooter>.container>.code{
+			width: 400px;
+			height: 90px;
+			margin:10px 20px;
+			float:left;
+		}
+		.myfooter>.container>.return{
+			width: 80px;
+			height:80px;
+			border-radius:40px;
+			background:#dcb5a6;
+			position:fixed;
+			right:0;
+			bottom:20px;
+			font: bold 20px/30px '微软雅黑';
+			text-align: center;
+			cursor:pointer;
+			transition: all 5s ease;
+		}
+		.myfooter>.container>.return>a{
+			color:#fff;
+		}
+		.myfooter>.container>.return:hover>a{
+			color:#8b7948;
+		}
+	</style>
+</head>
+<body>
+	<script src="util/vue.js"></script>
+	<script src="util/vuex.js"></script>
+	<script src="util/vue-resource.js"></script>
+	<script src="util/jquery.min.js"></script>
+	<div id="app">
+		<myheader></myheader>
+		<mynav></mynav>
+		<mybody v-if="$store.state.seller_store.changeIndex==1"></mybody>
+		<mynew  v-else-if="$store.state.seller_store.changeIndex==2"></mynew>
+		<mylist v-else-if="$store.state.seller_store.changeIndex==4"></mylist>
+		<myfooter></myfooter>
+	</div>
+	<template id="myheader">
+		<div class="myheader common">
+			<div class="container">
+				<div class="logo">锄禾网</div>
+				<div class="search">
+					<input type="search" placeholder="商家，美食">
+					<input type="button" value="搜索">
+				</div>
+				<div class="login" v-if="!$store.state.seller_store.curUser">
+					<a href="logReg/login.html">登录</a>
+					<a href="logReg/register.html">注册</a>
+				</div>
+				<div class="userHead" v-else="$store.state.seller_store.curUser" v-text="$store.state.seller_store.curUser.username" @click="changePage">
+				
+				</div>
+			</div>
+		</div>
+	</template>
+	<script>
+		var myheader=Vue.extend({
+			template:'#myheader',
+			methods:{
+				changePage:function(){ 
+					if(this.$store.state.seller_store.curUser.usertype=='client'){
+						this.$store.commit('seller_store/changePage',4);
+						this.$store.state.seller_store.listcurShow='info';
+					}else{
+						for(var i=0;i<this.$store.state.seller_store.sellers.length;i++){
+							if(this.$store.state.seller_store.curUser.seller_id==this.$store.state.seller_store.sellers[i].seller_id){
+								location.href="seller/seller.html?"+"txt="+encodeURI(JSON.stringify(this.$store.state.seller_store.sellers[i]));
+							}
+						}
+					}
+				}
+			}
+		});
+		Vue.component('myheader',myheader);
+	</script>
+	<template id="mynav">
+		<div class="mynav common">
+			<div class="container">
+				<ul>
+					<li @click="changePage(1)">首页</li>
+					<li @click="changePage(2)">今日新单</li>
+					<!-- <li @click="changePage(3)">哈哈哈</li> -->
+				</ul>
+				<div class="cart" v-show="$store.state.seller_store.curUser.usertype=='client'&&$store.state.seller_store.cartShow"  @click="changePage(4)">
+					<a href="#">我的购物车</a>
+					<div class="cart_list">
+						<ul>
+							<li v-for="value in cartList">
+								<span v-for="item in value" v-text="item"></span>
+								<span>我的购物车</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</template>
+	<script>
+		var mynav=Vue.extend({
+			template:'#mynav',
+			data:function(){
+				return {
+					cartList:[
+						{food_name:'粥末甜筒',food_price:'¥23'},
+						{food_name:'法师蛋糕',food_price:'¥45'}
+					]
+				};
+			},
+			methods:{
+				changePage:function(index){ 
+					this.$store.commit('seller_store/changePage',index);
+					if(index==4)
+						this.$store.state.seller_store.cartShow=false;
+					else
+						this.$store.state.seller_store.cartShow=true;
+				}
+			}
+		});
+		Vue.component('mynav',mynav);
+	</script>
+	
+	<!-- mybody组件 -->
+	<template id="mybody"  v-for="item in seller">
+		<div class="mybody common">
+			<div class="container">
+				<!-- <dl>               
+					<dt>附近商家</dt>
+					<dd v-for="(value,i) in seller.names" v-text="value" @mouseover="showIntro(i)" :class={intro_active:i==index}></dd>
+					<dd>...</dd>
+				</dl> -->
+				<!-- <div class="intro" v-if="i==index" v-for="(value,i) in seller.intro" >
+					<span>-商家简介-</span><br>
+					<span v-text="value"></span>
+				</div> -->
+				<dl>
+					<dt>分类</dt>
+					<dd @mouseover="showList(1)" @mouseout="hideList">
+						美食
+						<div class="tab" v-show="list==1"><a href="#">火锅1</a><a href="#">牛排</a><a href="#">自助</a><a href="#">咖啡</a>
+						<a href="#">奶茶</a><a href="#">麻辣烫</a><a href="#">过桥米线</a><a href="#">酸辣粉</a>
+						<a href="#">烧烤烤肉</a><a href="#">川湘菜</a><a href="#">烤鱼</a><a href="#">麻辣香锅</a>
+						<a href="#">快餐</a><a href="">猪脚饭</a></div>
+					</dd>
+					<dd @mouseover="showList(2)" @mouseout="hideList">
+						酒店/客栈
+						<div class="tab" v-show="list==2"><a href="#">小租</a><a href="#">一星级酒店</a><a href="#">二星级酒店</a><a href="#">三星级酒店</a>
+						<a href="#">三星级酒店</a><a href="#">四星级酒店</a><a href="#">五星级酒店</a><a href="#">六星级酒店</a>
+						<a href="#">七星级酒店</a><a href="#">八星级酒店</a><a href="#">九星级酒店</a><a href="#">十星级酒店</a>
+						<a href="#">十一星际</a><a href="">长租</a></div>
+					</dd>
+					<dd @mouseover="showList(3)" @mouseout="hideList">
+						ktv
+						<div class="tab" v-show="list==3"><a href="#">火锅3</a><a href="#">牛排</a><a href="#">自助</a><a href="#">咖啡</a>
+						<a href="#">奶茶</a><a href="#">麻辣烫</a><a href="#">过桥米线</a><a href="#">酸辣粉</a>
+						<a href="#">烧烤烤肉</a><a href="#">川湘菜</a><a href="#">烤鱼</a><a href="#">麻辣香锅</a>
+						<a href="#">快餐</a><a href="">猪脚饭</a></div>
+					</dd>
+					<dd @mouseover="showList(4)" @mouseout="hideList">
+						代金券
+						<div class="tab" v-show="list==4"><a href="#">火锅4</a><a href="#">牛排</a><a href="#">自助</a><a href="#">咖啡</a>
+						<a href="#">奶茶</a><a href="#">麻辣烫</a><a href="#">过桥米线</a><a href="#">酸辣粉</a>
+						<a href="#">烧烤烤肉</a><a href="#">川湘菜</a><a href="#">烤鱼</a><a href="#">麻辣香锅</a>
+						<a href="#">快餐</a><a href="">猪脚饭</a></div>
+					</dd>
+					<dd @mouseover="showList(5)" @mouseout="hideList">
+						电影院/在线选座
+						<div class="tab" v-show="list==5"><a href="#">火锅5</a><a href="#">牛排</a><a href="#">自助</a><a href="#">咖啡</a>
+						<a href="#">奶茶</a><a href="#">麻辣烫</a><a href="#">过桥米线</a><a href="#">酸辣粉</a>
+						<a href="#">烧烤烤肉</a><a href="#">川湘菜</a><a href="#">烤鱼</a><a href="#">麻辣香锅</a>
+						<a href="#">快餐</a><a href="">猪脚饭</a></div>
+					</dd>
+					<dd @mouseover="showList(6)" @mouseout="hideList">
+						生活服务
+						<div class="tab" v-show="list==6"><a href="#">火锅6</a><a href="#">牛排</a><a href="#">自助</a><a href="#">咖啡</a>
+						<a href="#">奶茶</a><a href="#">麻辣烫</a><a href="#">过桥米线</a><a href="#">酸辣粉</a>
+						<a href="#">烧烤烤肉</a><a href="#">川湘菜</a><a href="#">烤鱼</a><a href="#">麻辣香锅</a>
+						<a href="#">快餐</a><a href="">猪脚饭</a></div>
+					</dd>
+				</dl>
+				<mybanner></mybanner>
+				<div class="hot">
+					<span>--热门--</span>
+					<ul>
+						<li v-for="(value,i) in sellers" @click="sendSeller(i)" v-show="i>=$store.state.seller_store.startIndex&&i<$store.state.seller_store.endIndex">  <!--v-show=""  显示前8个商家-->
+							<img :src="value.seller_pic" alt="">    <!-- 商家头像 -->
+							<a v-text="value.seller_acti"></a>  <!-- 商家活动 -->
+							<a v-text="value.delivery_time"></a>  <!-- 配送时间 -->
+							<div class="hot_intro">
+								<a v-text="value.seller_name"></a>  <!-- 商家名称 -->
+								<a v-text="value.seller_sales"></a>
+							</div>
+							<!-- <span v-show="showIndex==i" @mouseout="hideName">
+								<a href="#" v-text="value.name"></a><br>
+								<a v-text="value.storeName"></a>
+							</span> -->
+						</li>
+					</ul>
+					<mypage></mypage>
+				</div>
+				
+				<div class="like">
+					<span>--猜你喜欢--</span>
+					<ul>
+						<li v-for="(value,i) in foods" @click="sendFood(i)" :data-intro="value.food_intro">
+							<img :src="value.food_pic" alt="" @mouseover="showName(i)">
+							<!-- <span v-show="showIndex==i" @mouseout="hideName">
+								<a href="#" v-text="value.name"></a><br>
+								<a v-text="value.storeName"></a>
+							</span> -->
+							<span>
+								<a href="#" v-text="value.food_name"></a>
+								<a href="#" v-text="value.seller_name"></a>
+							</span>
+						</li>
+					</ul>
+				</div>
+				<!-- <mypage></mypage> -->
+			</div>
+		</div>
+	</template>
+
+	<!-- mybanner组件 -->
+	<template id="mybanner">
+		<div class="mybanner">
+			<a href="#"  v-for="(item,i) in aImgs" :class='[{show:curIndex==i&&lastIndex!=-1},{hide:lastIndex==i}]' @mouseover="stop" @mouseout="start">
+				<img :src="item" alt="">
+			</a>
+		</div>
+	</template>
+
+	<!-- mynew组件 -->
+	<template id="mynew">
+		<div class="mynew container">
+			<div class="new_head">今日新单</div>
+			<ul>
+				<li v-for="(value,i) in foods" @click="sendFood(i)">
+					<div class="my_new_img" @mouseover="showIntro(i)" @mouseout="hideIntro">
+						<img :src="value.food_pic" alt="">
+						<p v-text="value.food_intro" v-show="i==showIndex"></p>
+					</div>
+					<div class="discribe">
+						<a v-text="value.seller_name"></a>
+						<a v-text="value.food_name"></a>
+						<span v-text="value.food_sales"></span>
+						<div class="food_price">
+							<span v-text="value.food_old_price"></span>
+							<span v-text="value.food_price"></span>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</template>
+	<!-- myfooter组件 -->
+	<template id="myfooter">
+		<div class="myfooter common">
+			<div class="container">
+				<div class="copyright">
+					<a href="#">联系我们</a>  <a href="#">关于我们</a><br>    
+					@copyright 2017江西农业大学软件学院h5班第九组 
+				</div>
+				<div class="code">
+					扫描下方二维码，加入我们吧
+				</div>
+				<div class="return" v-show="isShow"><a href="#app">^<br>TOP</a></div>
+			</div>
+		</div>
+	</template>
+	<script>
+		var myfooter=Vue.extend({
+			template:'#myfooter',
+			data:function(){
+				return {
+					isShow:false
+				};
+			},
+			created:function(){
+
+			},
+			methods:{
+				changeIsShow:function(){
+					var scrollTop;
+					if(document.body.scrollTop)
+						scrollTop=document.body.scrollTop;
+					else
+						scrollTop=document.documentElement.scrollTop;
+					// console.log(scrollTop);
+					if(scrollTop>=100){
+						this.isShow=true;
+					}else{
+						this.isShow=false;
+					}
+				}
+			},
+			mounted:function() {
+			  window.addEventListener('scroll', this.changeIsShow);  //监听滚动条事件
+			}
+		});
+		Vue.component('myfooter',myfooter);
+	</script>
+	<!-- mypage组件 -->
+	<template id="mypage">
+		<div class="mypage">
+			<ul>
+				<li @click="changePage(curPage-1)">上一页</li>
+				<li v-text="curPage"></li>
+				<li @click="changePage(curPage+1)">下一页</li>
+			</ul>
+		</div>
+	</template>
+	<!-- mylist组件 -->  
+	<template id="mylist">
+		<div class="mylist container">
+			<div class="mylist_nav">
+				<ul>
+					<li @click="changeList('order')">我的订单</li>
+					<li @click="changeList('car')">我的购物车</li>
+					<li @click="changeList('info')">我的信息</li>
+				</ul>
+				<mycar v-show="$store.state.seller_store.listcurShow=='car'"></mycar>
+				<order v-show="$store.state.seller_store.listcurShow=='order'"></order>
+				<myinfo v-show="$store.state.seller_store.listcurShow=='info'"></myinfo>
+			</div>
+		</div>
+	</template>
+
+	<!-- popwindow组件 -->
+	<template id="popwindow">
+		<transition name="fade">
+			<div class="overlay" v-show="isShow">
+				<div class="content">
+					<slot name="header"></slot>
+					<slot name="body"></slot>
+					<slot name="footer"></slot>
+				</div>
+			</div>
+		</transition>
+	</template>
+
+	<!-- myPay组件 -->
+	<template id="myPay">
+		<popwindow :is-show="isShow">
+			<div slot="header" class="myPay-header">
+				<span @click="closeWindow">×</span>
+				<h4>请输入支付密码</h4>
+			</div>
+			<div slot="body" class="myPay-body">
+					<input type="password" maxlength="1" autofocus>
+					<input type="password" maxlength="1">
+					<input type="password" maxlength="1">
+					<input type="password" maxlength="1">
+					<input type="password" maxlength="1">
+					<input type="password" maxlength="1">
+			</div>
+			<div slot="footer" class="myPay-footer">
+				<input type="button" value="确定" @click="closeWindow">
+				<input type="button" value="取消" @click="closeWindow">
+			</div>
+		</popwindow>
+	</template>
+
+	<!-- myCar组件 -->
+	<template id="myCar">
+		<div>
+			<h2 v-text="msg"></h2>
+			<div class="header">
+				<span v-for="value in headers" v-text="value"></span>
+			</div>
+			<hr>
+			<table class="myCar">
+				<tbody>
+					<tr v-for="(item,i) in items">
+						<td><input type="checkbox" v-model="item.selected" class="checkbox" @click="choice"></td>
+						<td><img :src="item.pic" alt="" id="img"></td>
+						<td><span v-text="item.intro"></span></td>
+						<td>
+							<span v-text="'￥'+item.price"></span>
+							<span v-text="'￥'+item.oldPrice"></span>
+						</td>
+						<td>
+							<span @click="down(i)">-</span>
+							<input type="text" :value="item.num">
+							<span @click="up(i)">+</span>
+						</td>
+						<td><span v-text="'￥'+item.totalPrice"></span></td>
+						<td><a href="#" @click="del(i)">删除</a></td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="footer">
+				<input type="checkbox" id="checkAll" @click="checkAll">
+				<ul>
+					<li>全选</li>
+					<li>合计：</li>
+					<li><span v-text="sumPrice"></span></li>
+					<li @click="mypay">结算</li>
+				</ul>
+			</div>
+			<mypay :is-show="isShow"  @close-window="closeWindow"></mypay>
+		</div>
+	</template>
+
+	<!-- order组件 -->
+	<template id="order">
+		<div class="order">
+			<span v-text="msg"></span>
+			<ul>
+				<li v-for="(value,i) in contents">
+					<a href="#" @click="del(i)">取消订单</a>
+					<img :src="value.pic" alt="">
+					<span v-text="value.intro" class="intro"></span>
+					<span v-text="value.price" class="price"></span>
+					
+				</li>
+			</ul>
+		</div>
+	</template>
+
+	<!-- edit -->
+	<template id="edit">
+			<popwindow :is-show="isShow">
+				<div slot="header" class="edit-header">
+					<span>编辑资料</span>
+					<span @click="closeWindow">×</span>
+				</div>
+				<div slot="body" class="edit-body">
+					<div><span>username:</span><input type="text" v-model="myItem.username"></div>
+					<div><span>password:</span><input type="text" v-model="myItem.password"></div>
+					<div><span>sex:</span><input type="text" v-model="myItem.sex"></div>
+					<div><span>address:</span><input type="text" v-model="myItem.address"></div>
+					<div><span>tel:</span><input type="text" v-model="myItem.tel"></div>
+				</div>
+				<div slot="footer" class="edit-footer">
+					<input type="button" value="保存" @click="save">
+					<input type="button" value="取消" @click="closeWindow">
+				</div>
+			</popwindow>
+		</template>
+	
+	<!-- myinfo -->
+	<template id="myinfo">
+		<div class="myinfo">
+			<span v-text="msg"></span>
+			<span>×</span>
+			<a href="#" @click="edit">编辑...</a>
+			<div class="con">
+				<div><span>我的名字:</span><span v-text="userData.username"></span></div>
+				<div><span>登录密码:</span><span v-text="userData.password"></span></div>
+				<div><span>性别:</span><span v-text="userData.sex"></span></div>
+				<div><span>收货地址:</span><span v-text="userData.address"></span></div>
+				<div><span>电话号码:</span><span v-text="userData.tel"></span></div>
+				<!-- <div><span>type:</span><span v-text="type"></span></div> -->
+			</div>
+			<edit :is-show="isShow" @close-window="closeWindow" @update-user="updateUser" :item="userData"></edit>
+		</div>
+	</template>
+
+	<script src="store/seller_store.js"></script>
+	<script src="store/store.js"></script>
+	
+	<script src="components/mybody/mybody.js"></script>
+	<script src="components/mybanner/mybanner.js"></script>
+	<script src="components/mynew/mynew.js"></script>
+	<script src="components/mylist/mylist.js"></script>
+	<script src="components/mypage/mypage.js"></script>
+	<script src="components/popwindow/popwindow.js"></script>
+	<script src="components/mypay/mypay.js"></script>
+	<script src="components/mycar/mycar.js"></script>
+	<script src="components/order/order.js"></script>
+	<script src="components/myinfo/myinfo.js"></script>
+	<script src="components/edit/edit.js"></script>
+	<script>
+		var vm=new Vue({
+			el:'#app',
+			store:store,
+			data:function(){
+				return {
+				};
+			},
+			methods:{
+			}
+		});
+	</script>
+</body>
+>>>>>>> takeout
+</html>

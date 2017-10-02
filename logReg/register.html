@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>锄禾网——畅享美味</title>
+	<link rel="stylesheet" type="text/css" href="css/main.css" />
+	<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="js/scrollable.js"></script>
+	<script src="js/register.js"></script>
+</head>
+
+<body>
+<div class="cont_principal">
+	<div id="header">
+	   <div id="logo"><a href="#" title="返回锄禾首页">锄禾网</a></div>
+	</div>
+
+	<div id="main">
+	   <form action="#" method="post">
+		<div id="wizard">
+			<ul id="status">
+				<li class="active"><strong>*1.</strong>创建账户</li>
+				<li><strong>2.</strong>填写联系信息</li>
+				<li><strong>3.</strong>完成</li>
+			</ul>
+
+			<div class="items">
+				<div class="page">
+	               <h3>创建一个账户<br/><em>请填写您的注册账户信息，用于登录(*必填)</em></h3>
+	               <p><label>*用户名：</label><input type="text" class="input" id="user" name="username" /></p>
+	               <p><label>*密码：</label><input type="password" class="input" id="pass" name="password" /></p>
+	               <p><label>*确认密码：</label><input type="password" class="input" id="pass1" name="password1" /></p>
+	               <div class="btn_nav">
+	               	  <a href="login.html"><input type="button" class="prev" style="float:left" value="返回登录"></a>
+	                  <input type="button" class="next right" value="下一步&raquo;" />
+	               </div>
+	            </div>
+				<div class="page">
+	               <h3>填写联系信息<br/><em>请告诉我们您的联系方式(选填)</em></h3>
+					<label style="font-size:15px">性别：
+	               	<input type="radio" name="sex" value="male">男
+	               	&nbsp&nbsp&nbsp&nbsp
+	               	<input type="radio" name="sex" value="female">女
+					</label>
+					<br><br><br>
+	               <p><label>常用收货地址：</label><input type="text" class="input" name="site" id="address"></p>
+	               <br>
+	               <p><label>手机号码：</label><input type="text" class="input" name="mobile" id="tel"></p>
+	               <div class="btn_nav">
+	                  <input type="button" class="prev" style="float:left" value="&laquo;上一步">
+	                  <input type="button" class="next right" value="下一步&raquo;">
+	               </div>
+	            </div>
+				<div class="page">
+	                <h3>完成注册<br/><em>点击"确定"完成注册。</em></h3>
+	                <div class="check">
+						<input type="radio" checked="checked">你已同意&nbsp<a href="#"><锄禾网>用户协议</a>
+		            </div>
+	                <h4>锄禾网，欢迎您！</h4>
+	                <br><br><br><br><br><br><br><br><br><br>
+	                <div class="btn_nav">
+		                <input type="button" class="prev" style="float:left" value="&laquo;上一步" />
+		                <!-- <a href="index.html"> -->
+						<input type="button" class="next right" id="sub" value="确定"></a>
+						<a id="loginin" href="login.html">登录</a>
+	               	</div>					
+				</div>	
+			</div>
+		</div>	
+	</div>
+	</form>
+	<div id="footer">版权所有&copy;传习教育H5班九组</div>
+</div>
+</body>
+</html>

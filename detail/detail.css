@@ -1,0 +1,165 @@
+*{margin: 0;padding: 0;}
+ul{list-style: none;}
+
+body{
+	background: url(../images/bg.png) repeat-y center top;
+}
+
+/*popwindow*/
+.overlay{
+	width: 100%;height: 100%;
+	position: fixed;
+	top: 0;left: 0;
+	background-color: rgba(0,0,0,.4);
+}
+.overlay>.content{
+	width: 300px;
+	padding: 30px 50px;
+	position: absolute;
+	left: 50%;top: 20%;
+	transform: translate(-50%);
+	background-color: #fff;
+	border-radius: 5px;
+	overflow: hidden;
+}
+.fade-enter{opacity: 0;}
+.fade-enter-active,.fade-leave-active{transition: all 0.8s ease;}
+.fade-leave{opacity: 0;}
+
+/*mycode*/
+/*header*/
+.mycode-header{
+	width: 100%;
+	position: absolute;
+	left: 0;top: 0;
+	background-color: rgb(220,181,166);
+}
+.mycode-header>span:nth-child(1),.mycode-header>span:nth-child(2){
+	display: inline-block;
+}
+.mycode-header>span:nth-child(1){
+	height: 40px;
+	font: 16px/40px '微软雅黑';
+	color: #fff;
+	text-indent: 1em;
+}
+.mycode-header>span:nth-child(2){
+	width: 25px;height: 25px;
+	font: 24px/25px "微软雅黑";
+	float: right;
+	cursor: pointer;
+	color: #fff;
+	text-align: center;
+	margin: 4px;
+}
+.mycode-header>span:nth-child(2):hover{background-color: #ff2a00;}
+/*body*/
+.mycode-body{width: 100%;margin-top: 30px;}
+.mycode-body>h3{font-family: "黑体";}
+.mycode-body>.big>img{margin-top: 30px;margin-left: 86px;}
+.mycode-body>.small>img{margin-top: 20px;margin-left: 30px;}
+.mycode-body>.small>span{margin-left: 10px;font: 14px "黑体"; color: #666;}
+/*footer*/
+.mycode-footer{width: 100%;margin-top: 30px;height: 80px;position: relative;}
+.mycode-footer>span{position: absolute;}
+.mycode-footer>span>a{
+	float: right;
+	text-decoration: none;
+	color: #555;
+	font: 15px "黑体";
+}
+.mycode-footer>span:nth-child(1){right: 65px;}
+.mycode-footer>span:nth-child(2){right: 0;}
+.mycode-footer>span>a:hover{color: #ff2a00;}
+
+/*detail*/
+.detail{
+	width: 1200px;
+	border:1px solid rgb(220,181,166);
+	margin: 20px auto;
+	overflow: hidden;
+}
+
+.detail #left{
+	width: 530px;height: 530px;
+	float: left;
+}
+.detail #left img{width: 500px;height: 500px;margin-top: 15px;margin-left: 15px;}
+.detail #left img:hover{transform: scale(1.05,1.05);}
+
+.detail #right{float:left;}
+.detail #right p:nth-child(1){margin-top: 15px;font: 24px/30px "微软雅黑";}
+.detail #right p:nth-child(2){
+	margin-top: 5px;margin-bottom: 5px;
+	font:16px/24px; "黑体";color: #333;}
+.detail #right .price{
+	width: 655px;height: 60px;
+	background-color: rgba(220,181,166,.5);
+}
+.detail #right .price span,.detail #right .send span,.detail #right .num span
+{display: inline-block;height: 60px;}
+.detail #right .price span:nth-child(1),.detail #right .send span:nth-child(1),
+.detail #right .num span:nth-child(1),.detail #right .promise span:nth-child(1),
+.detail #right .pay span:nth-child(1)
+{
+	width: 50px;
+	font:16px/60px "黑体";
+	margin-left: 20px;
+	color: #999999;
+}
+.detail #right .price span:nth-child(2){
+	font: 48px/60px "黑体";
+	margin-left: 50px;
+	color:#ff2a00;
+}
+.detail #right .price span:nth-child(3){
+	font: 16px/60px "黑体";
+	margin-left: 5px;
+	color:#999;
+	text-decoration: line-through;
+}
+.detail #right .send,.detail #right .num,.detail #right .buy,
+.detail #right .promise,.detail #right .pay{
+	width: 655px;height: 60px;
+	background-color: rgba(220,181,166,.5);
+	margin-top: 15px;
+}
+.detail #right .send span:nth-child(2){
+	width: 50px;
+	font:16px/60px "黑体";
+	margin-left: 60px;
+}
+.detail #right .num span:nth-child(2),.detail #right .num span:nth-child(4){
+	font:16px/60px "黑体";
+	margin-left: 60px;
+	color: #ff2a00;
+	cursor: pointer;
+}
+.detail #right .num span:nth-child(2){margin-right: 15px;}
+.detail #right .num span:nth-child(4){margin-left: 15px;}
+.detail #right .num input{
+	width: 30px;height: 30px;
+	border: 1px solid #ccc;
+	text-align: center;
+}
+.detail #right .buy input:nth-child(1){
+	width: 90px;height: 40px;
+	margin-left: 20px;margin-top: 10px;
+	background-color: rgba(220,181,166,.8);
+	cursor: pointer;
+}
+.detail #right .buy input:nth-child(1):hover{background-color: rgb(182, 143, 129);}
+.detail #right .buy input:nth-child(2){
+	width: 110px;height: 40px;
+	margin-left: 40px;margin-top: 10px;
+	background-color: #ff4b00;
+	cursor: pointer;
+}
+.detail #right .buy input:nth-child(2):hover{background-color: #ff2a00;}
+.detail #right .promise span:nth-child(2),.detail #right .promise span:nth-child(3),
+.detail #right .promise span:nth-child(4),.detail #right .pay span:nth-child(2),
+.detail #right .pay span:nth-child(3),.detail #right .pay span:nth-child(4){
+	color: #999;
+	margin-left: 60px;
+}
+

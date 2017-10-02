@@ -1,0 +1,22 @@
+.mylist>.container{}
+.mylist>.mylist_nav{
+	border:1px solid #ccc;
+	/* height: 1000px; */
+}
+.mylist>.mylist_nav>ul{
+	width: 315px;
+	border:1px solid #ccc;
+}
+.mylist>.mylist_nav>ul>li{
+	width: 100px;
+	height: 40px;
+	font:16px/40px '微软雅黑';
+	text-align: center;
+	color:#536041;
+	background:#c39382;
+	cursor:pointer;
+	display:inline-block;
+}
+.mylist>.mylist_nav>ul>li:hover{
+	color:#887e45;
+}

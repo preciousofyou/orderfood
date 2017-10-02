@@ -1,0 +1,119 @@
+.mynew{}
+.mynew>.new_head{
+	width: 100%;
+	height: 60px;
+	text-indent: 30px;
+	font: bold 20px/60px '微软雅黑';
+	background:rgba(255,255,255,.5);
+}
+.mynew>ul{}
+.mynew>ul>li{
+	display: inline-block;
+	width: 350px;
+	height:300px;
+	margin-bottom: 20px;
+	/*box-shadow: 1px 1px 1px 1px #969898;*/
+	border: 1px solid #f1f1f1;
+	font-size: 0;
+	position:relative;
+}
+.mynew>ul>li:nth-child(3n-1){
+	margin:0 70px;
+}
+.mynew>ul>li:hover{
+	border:1px solid #0f0;
+}
+.mynew>ul>li>.my_new_img{
+	cursor:pointer;
+}
+.mynew>ul>li>.my_new_img>img{
+	width: 350px;
+	height:200px;
+}
+.mynew>ul>li>.discribe{
+	width: 100%;
+	height:100px;
+	position:relative;
+	background:rgba(255,255,255,.3);
+}
+.mynew>ul>li>.discribe>a{
+	display: inline-block;
+	text-indent:10px;
+	cursor: pointer;
+}
+.mynew>ul>li>.discribe>a:hover{
+	text-decoration: underline;
+}
+.mynew>ul>li>.discribe>a:nth-child(1){
+	font: bold 20px/40px '宋体';
+}
+.mynew>ul>li>.discribe>a:nth-child(2){
+	font:18px/40px '微软雅黑';
+}
+.mynew>ul>li>.discribe>span{
+	display: inline-block;
+}
+.mynew>ul>li>.discribe>span:nth-child(3){
+	width: 150px;
+	height: 30px;
+	font:14px/30px '微软雅黑';
+	position:absolute;
+	bottom: 20px;
+	left:20px;
+}
+.mynew>ul>li>.discribe>span:nth-child(3)>p{
+	display:inline-block;
+}
+.mynew>ul>li>.discribe>.food_price{
+	width: 130px;
+	height: 80px;
+	position:absolute;
+	top: 10px;
+	right:10px;
+}
+.mynew>ul>li>.discribe>.food_price>span:nth-child(1){
+	font:16px/30px '微软雅黑';
+	text-decoration: line-through;
+	/* margin-left:50px; */
+}
+.mynew>ul>li>.discribe>.food_price>span:nth-child(2){
+	font:25px/80px '微软雅黑';
+	width: 80px;
+	height: 80px;
+	background-color: #f75;
+	text-align: center;
+	border-radius: 40px;
+	display: inline-block;
+	margin-left:5px;
+}
+/* .mynew>.page{}
+.mynew>.page{
+}
+.mynew>.page>ul{
+	width: 250px;
+	margin:20px auto;
+}
+.mynew>.page>ul>li{
+	display:inline-block;
+	padding: 5px 10px;
+	border:1px solid #ccc;
+	cursor:pointer;
+}
+.mynew>.page>ul>li:hover{
+	border:1px solid #895;
+} */
+
+.mynew>ul>li>.my_new_img>p{
+	width: 100px;
+	height: 190px;
+	font: 12px/20px '微软雅黑';
+	text-indent:5px;
+	padding: 5px;
+	position: absolute;
+	color:#fff;
+	text-align: center;
+	right:0;
+	top:0;
+	background:rgba(0,0,0,.2);
+	border-radius: 10px;
+}

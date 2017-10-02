@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>商家</title>
+	<link rel="stylesheet" href="seller.css">
+	<link rel="stylesheet" href="components/menu/menu.css">
+	<link rel="stylesheet" href="components/grid/grid.css">
+	<link rel="stylesheet" href="components/details/details.css">
+	<link rel="stylesheet" href="components/head/head.css">
+	<link rel="stylesheet" href="components/idea/idea.css">
+	<link rel="stylesheet" href="components/popwindow/popwindow.css">
+	<link rel="stylesheet" href="components/edit/edit.css">
+</head>
+<body>
+	<div id="app">
+		<div class="header">
+			<span>锄禾网</span>
+			<myhead></myhead>
+		</div>
+		<div id="content">
+			<div>
+				<div class="left">
+					<mymenu></mymenu>
+					<myidea></myidea>
+				</div>
+				<div class="right">
+					<grid></grid>
+				</div>
+			</div>
+		</div>
+		<div class="bottom">
+			<mydetails></mydetails>
+		</div>
+		<div class="footer">
+			<p>联系我们   关于我们  <br>&copy; 2017江西农业大学软件学院h5班第九组
+			</p>
+			<span>扫描下方二维码,加入我们吧</span>
+		</div>
+	</div>
+	<template id="popwindow" >
+		<div id="overlay" v-show="isShow">
+			<div id="context">
+			  	<slot name="header"></slot>
+				<slot name="body"></slot>
+				<slot name="footer"></slot>
+			</div>
+		</div>
+	</template>
+	<template id="edit">
+		<popwindow :is-show="state.editShow">
+			<div slot="header" class="edit-header">
+				<span @click="$store.commit('details/endEdit')">×</span>
+				<h2 v-text="title"></h2>
+			</div>
+			<div slot="body" class="edit-body">
+				<ul>
+					<li v-for="(value,i) in state.field">
+						<label :for="'m_'+value.name" v-text="value.name+':'"></label>
+						<input v-if="value.type=='file'" type="file" :id="'m_'+value.name" @change="input($event)">
+						<input v-else type="text" :id="'m_'+value.name" v-model="state.editItem[value.name]" :disabled="value.name==state.key&&state.addOrUpdate=='update'">
+					</li>
+				</ul>
+			</div>
+			<div slot="footer" class="edit-footer">
+				<button @click="editComplete">保存</button>
+				<button @click="$store.commit('details/endEdit')">取消</button>
+			</div>
+		</popwindow>
+	</template>
+	<template id="head">
+		<div>
+			<ul>
+				<li v-for="(items,i) in intro" :class="{active:$store.state.curIndex==i}">
+					<span v-text="$store.state.details.sellers.seller_name"></span>
+					<img :src="'../'+$store.state.details.sellers.seller_pic" alt="">
+					<p v-text="'起送价:'+$store.state.details.sellers.start_price"></p>
+					<p v-text="'配送费:'+$store.state.details.sellers.delivery_fee"></p>
+					<p v-text="'配送时间:'+$store.state.details.sellers.delivery_time"></p>
+					<p v-text="'商家电话:'+$store.state.details.sellers.seller_tel"></p>
+					<font color="#fff"><marquee behavior="" direction="right" bgcolor="#dcb5a6" height="30px" v-text="'今日公告:'+$store.state.details.sellers.seller_notice"></marquee></font>
+				</li>
+			</ul>
+		</div>
+	</template>
+	<template id="menu">
+		<ul class="mainMenu">
+			<span>全部分类</span>
+			<li :class="{active:curMenu==i}" v-for="(item,i) in menus" v-text="item.name" @click="changeMenu(item,i)"></li>
+		</ul>
+	</template>
+	<template id="idea">
+		<div>
+			<h4>商家详情</h4>
+			<p v-for="(item,i) in message" v-text="$store.state.details.sellers.seller_intro" :class="{active:$store.state.curIndex==i}"></p>
+		</div>
+	</template>
+	<template id="grid">
+		<div>
+			<ul v-for="(item,index) in state" :class="{active:$store.state.curIndex==index}">
+				<template v-for="itemes in item">
+					<li v-for="(items,i) in itemes.fields">
+						<a href="#" ><img :src="'../'+items.food_pic" alt=""></a>
+						<p v-text="items.food_name"></p>
+						<a href="#" @click="addToCar(i)" class="a1" v-show="$store.state.details.curUser.usertype=='client'||!$store.state.details.curUser.usertype">+</a>
+						<span v-text="items.food_price"></span>
+						<p v-text="items.food_old_price"></p>
+					</li>
+				</template>
+			</ul>
+		</div>
+	</template>
+	<!-- <template id="details">
+		<div>
+			<a href="#" @click="beginEdit()" v-show="$store.state.isAdmin">Add</a>
+			<ul v-for="(item,index) in state[this.$store.state.curGridName]" :class="{active:$store.state.curIndex==index}">
+				<template v-for="itemes in item">
+					<li v-for="(items,i) in itemes.fields">
+						<img :src="items.src" alt="" >
+						<p v-text="items.name"></p>
+						<a href="#" @click="addToCar(i)" class="a3">+</a>
+						<span v-text="'￥'+items.price"></span>
+						<span v-text="'￥'+items.oldprice"></span>
+						<a href="#" class="a4" v-show="$store.state.isAdmin" @click="del(items.id)">删除</a>
+						<a href="#" class="a5" v-text="items.id" v-show="$store.state.isAdmin" @click="beginEdit(items.id)"></a>
+					</li>
+				</template>
+			</ul>
+			<edit v-if="state.edit.fields.isEdit" @edit-complete="completeEdit"></edit>
+		</div>
+	</template> -->
+	<template id="details">
+		<div>
+			<a href="#" @click="beginEdit()" v-show="state.curUser.usertype=='seller'&&state.curUser.seller_id==state.sellers.seller_id">Add</a>
+			
+			<ul>
+				<li v-for="(items,index) in state.sellers.seller_foods">
+					<img :src="'../'+items.food_pic" alt=""  @click="skip(index)">
+					<p v-text="items.food_name"></p>
+					<a href="#" @click="addToCar(i)" class="a3" v-show="state.curUser.usertype=='client'||!$store.state.details.curUser.usertype">+</a>
+					<span v-text="items.food_price"></span>
+					<span v-text="items.food_old_price"></span>
+					<a href="#" class="a4" v-show="state.curUser.usertype=='seller'&&state.curUser.seller_id==state.sellers.seller_id" @click="del(items.food_id)">删除</a>
+					<a href="#" class="a5" v-text="items.food_id" v-show="state.curUser.usertype=='seller'&&state.curUser.seller_id==state.sellers.seller_id" @click="beginEdit(items.food_id)"></a>
+				</li>
+			</ul>
+			<edit v-if="state.edit.fields.isEdit" @edit-complete="completeEdit"></edit>
+		</div>
+	</template>
+	<!-- vue全家桶 -->
+	<script src="../util/vue.js"></script>
+	<script src="../util/vuex.js"></script>
+	<script src="../util/vue-resource.js"></script>
+	<!-- vuex数据仓库引入 -->
+	<script src="store/grid-store.js"></script>
+	<script src="store/details-store.js"></script>
+	<script src="store/store.js"></script>
+	<!-- vue组件相关js -->
+	<script src="components/head/head.js"></script>
+	<script src="components/idea/idea.js"></script>
+	<script src="components/popwindow/popwindow.js"></script>
+	<script src="components/edit/edit.js"></script>
+	<script src="components/menu/menu.js"></script>
+	<script src="components/grid/grid.js"></script>
+	<script src="components/details/details.js"></script>
+	<script>
+		var vm=new Vue({
+			el:"#app",
+			store:store
+		});
+	</script>
+</body>
+</html>
+

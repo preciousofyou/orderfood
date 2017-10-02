@@ -1,0 +1,26 @@
+.mybanner{
+	width: 800px;
+	height: 500px;
+	position: relative;
+	float: right;
+	overflow: hidden;
+}
+.mybanner>a{
+	position:absolute;
+	left:100%;
+	top:0;
+	animation-duration: 0.6S;
+	animation-timing-function: ease;
+	animation-fill-mode: forwards;
+}
+.mybanner>a:first-child{left:0;}
+.mybanner>a.show{animation-name:show;}
+.mybanner>a.hide{animation-name:hide;}
+@keyframes hide{
+	from{left:0;}
+	to{left:-100%;}
+}
+@keyframes show{
+	from{left:100%;}
+	to{left:0;}
+}

@@ -1,0 +1,51 @@
+/*myPay*/
+/*header*/
+.myPay-header{
+	position: absolute;
+	left: 0;top: 0;
+	background-color: rgb(220,181,166);
+	width: 100%;
+}
+.myPay-header>h4{
+	height: 40px;
+	font: 28px/40px '微软雅黑';
+	color: #fff;
+	text-indent: 1em;
+}
+.myPay-header>span{
+	display: inline-block;
+	width: 30px;height: 30px;
+	font: 28px/30px '微软雅黑';
+	float: right;
+	cursor: pointer;
+	color: #fff;
+	text-align: center;
+	margin: 5px;
+}
+.myPay-header>span:hover{
+	background-color: #ff2a00;
+}
+/*body*/
+.myPay-body{
+	width: 240px;
+	margin-top: 40px;
+	margin-left: auto;margin-right: auto;
+}
+.myPay-body input{width: 30px;height: 25px;}
+/*footer*/
+/*.myPay-footer{
+	text-align: center;
+}*/
+.myPay-footer>input{
+	margin-top: 20px;
+	padding: 5px 30px;
+	color: #fff;
+	font:18px '微软雅黑';
+	background-color: rgb(220,181,166);
+	border-radius: 5px;
+	margin-left: 27.5px;
+}
+.myPay-footer>input:hover{
+	box-shadow: 0 0 5px 2px #ccc;
+	background-color: #ff2a00;
+}

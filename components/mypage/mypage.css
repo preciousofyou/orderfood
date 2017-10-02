@@ -1,0 +1,16 @@
+.mypage{
+}
+.mypage>ul{
+	/*width: 250px;*/
+	margin:20px auto;
+	text-align: center;
+}
+.mypage>ul>li{
+	display:inline-block;
+	padding: 5px 10px;
+	border:1px solid #ccc;
+	cursor:pointer;
+}
+.mypage>ul>li:hover{
+	border:1px solid #895;
+}

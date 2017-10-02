@@ -1,0 +1,50 @@
+*{margin:0;padding: 0;}
+a{text-decoration: none;}
+ul{list-style: none;}
+body{
+	background:url(../images/bg.png) repeat-y center top;
+}
+#app{
+	/* background:url(logo/tbg.jpg); */
+	width: 1200px;
+	height: 1540px;
+	margin:0 auto;
+	position: relative;
+}
+/*body*/
+.nav{
+	width: 800px;
+	height: 50px;
+	margin:20px auto;
+}
+.nav>a{
+	display: inline-block;
+	width: 165px;
+	height: 50px;
+	font:20px/50px '新宋体';
+	background-color: #6a7365;
+	box-shadow: 0 0 5px #000;
+	margin-right: 95px;
+	color: #120E0E;
+	text-align: center;
+}
+/*footer*/
+.footer{
+	width: 100%;
+	/* position: absolute; */
+	/* left: 0; */
+	/* bottom: 0; */
+	margin:15px 0;
+}
+.footer>p{
+	float: left;
+	font: 16px '新宋体';
+	margin:10px 175px;
+	color: #000;
+}
+.footer>span{
+	float: left;
+	font: 16px '新宋体';
+	margin:10px 0;
+	color: #000;
+}

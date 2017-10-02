@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>detail</title>
+	<link rel="stylesheet" href="detail.css">
+</head>
+<body>
+	<div id="app">
+		<detail></detail>
+	</div>
+    
+    <script src="../util/vue.js"></script>
+	<script src="../util/vuex.js"></script>
+	<script src="../util/vue-resource.js"></script>
+	
+	<!-- popwindow组件 -->
+	<template id="popwindow">
+		<transition name="fade">
+			<div class="overlay" v-show="isShow">
+				<div class="content">
+					<slot name="header"></slot>
+					<slot name="body"></slot>
+					<slot name="footer"></slot>
+				</div>
+			</div>
+		</transition>
+	</template>
+	<script>
+		var popwindow=Vue.extend({
+			template:"#popwindow",
+			props:['isShow']
+		});
+	</script>
+
+	<!-- mycode -->
+	<template id="mycode">
+		<popwindow :is-show="isShow">
+			<div slot="header" class="mycode-header">
+				<span>账户登录</span>
+				<span @click="closeWindow">×</span>
+			</div>
+			<div slot="body" class="mycode-body">
+				<h3>手机扫码,安全登录</h3>	
+				<div class="big"><img src="../img/detail_mycode.png" alt=""></div>
+				<div class="small">
+					<img src="../img/detail1.png" alt="">
+					<span>扫一扫登录</span>
+				</div>
+			</div>
+			<div slot="footer" class="mycode-footer">
+				<span><a href="#">账户登录</a></span>
+				<span><a href="#">免费注册</a></span>
+			</div>
+	</template>
+	<script>
+		var mycode=Vue.extend({
+			template:"#mycode",
+			components:{popwindow:popwindow},
+			props:["isShow"],
+			methods:{
+				deepCopy:function(obj1,obj2){
+					for(var p in obj1){
+						if(Array.isArray(obj1[p]))
+							obj2[p]=obj1[p].slice(0);
+						else if(obj1[p]!=null&&(typeof obj1[p]=='object')){
+							obj2[p]={};
+							arguments.callee(obj1[p],obj2[p]);
+						}else
+							obj2[p]=obj1[p];
+					}
+				},
+				closeWindow:function(){
+					this.$emit('close-window');
+				}
+			}
+		});
+		Vue.component("mycode",mycode);
+	</script>
+
+	<!-- detail -->
+	<template id="detail">
+		<div class="detail">
+			<div id="left">
+				<img :src="'../'+foodData.food_pic" alt="">
+			</div>
+			<div id="right">
+				<p v-text="foodData.food_name"></p>
+				<p v-text="foodData.seller_name"></p>
+				<p>本店包邮是快递同城如需闪送请于客服联具体运费闪送费用购满200以上减免20闪送费</p>
+				<div  class="price">
+					<span>价格：</span>
+					<span v-text="foodData.food_price"></span><span v-text="foodData.food_old_price"></span>
+				</div>
+				<div class="send">
+					<span>配送：</span><span>深圳至</span>
+					<select name="" id="" v-model="address">
+						<option value="luohu">罗湖区</option>
+						<option value="longgang">龙岗区</option>
+						<option value="yantian">盐田区</option>
+						<option value="guangming">光明新区</option>
+						<option value="longhua">龙华区</option>
+						<option value="others">其他区</option>
+					</select>
+					<select name="" id="" v-model="sendPay">
+						<option value="sendPay">快递 ￥23</option>
+					</select>
+				</div>
+				<div class="num">
+					<span>数量：</span>
+					<span @click="down">-</span>
+					<input type="text" :value="num">
+					<span @click="up">+</span>
+				</div>
+				<div class="buy">
+					<input type="button" value="立即购买" @click="mycode">
+					<input type="button" value="加入购物车" @click="mycode">
+				</div>
+				<div class="promise">
+					<span>承诺：</span>
+					<span>订单险</span>
+					<span>不支持七天无理由退货</span>
+					<span>质量安全</span>
+				</div>
+				<div class="pay">
+					<span>支付：</span>
+					<span>蚂蚁花呗</span>
+					<span>信用卡支付</span>
+					<span>集分宝</span>
+				</div>
+			</div>
+			<mycode :is-show="isShow" @close-window="closeWindow"></mycode>
+		</div>
+	</template>
+	<script>
+		var detail=Vue.extend({
+			template:"#detail",
+			data:function(){
+				return {
+					address:"luohu",
+					sendPay:"sendPay",
+					foodData:{},
+					data:{
+						seller_name:"",
+						food_name:"",
+						food_pic:"",
+						food_old_price:"",
+						food_price:""
+					},
+					num:1,
+					isShow:false
+				};
+			},
+			created:function(){
+				if(location.href.indexOf("=")){
+					var loc=location.href;
+					var n1=loc.length;//地址的总长度
+					var n2=loc.indexOf("=");//取得=号的位置
+					var id=decodeURI(loc.substr(n2+1, n1-n2));
+					// console.log(JSON.parse(id));
+					this.foodData=JSON.parse(id);
+				}
+			},
+			computed:{
+			},
+			methods:{
+				down:function(){ 
+					if(this.num==1) return;
+					this.num--;
+				},
+				up:function(){
+					this.num++;
+				},
+				mycode:function(){
+					this.isShow=true;
+				},
+				closeWindow:function(){
+					this.isShow=false;
+				}
+			}
+		});
+		Vue.component("detail",detail);
+	</script>
+	
+	<script>
+		var vm=new Vue({
+			el:"#app",
+			data:{
+				isShow:false
+			}
+		});
+	</script>
+</body>
+</html>

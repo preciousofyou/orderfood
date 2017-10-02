@@ -1,0 +1,46 @@
+/*info*/
+.myinfo{
+	width: 600px;
+	border: 1px solid #fff;
+	margin: 50px auto;
+	background-color: rgba(220,181,166,.3);
+}
+.myinfo>span:nth-child(1){
+	display: inline-block;
+	font: 24px/40px "微软雅黑";
+	font-weight: bold;
+	margin-top: 10px;margin-left: 40px;
+}
+.myinfo>span:nth-child(2){
+	display: inline-block;
+	width: 30px;height: 30px;
+	font: 28px/30px '微软雅黑';
+	float: right;
+	cursor: pointer;
+	color: #fff;
+	text-align: center;
+	margin: 5px;
+}
+.myinfo>span:nth-child(2):hover{color: #ff2a00;}
+.myinfo>a{
+	display: inline-block;
+	width: 50px;
+	font: 16px/30px '微软雅黑';
+	cursor: pointer;
+	color: #05f;
+	text-align: center;
+	margin: 10px;
+	text-decoration: none;
+}
+.myinfo>a:hover{text-decoration: underline;}
+.myinfo>.con>div{
+	width: 80%;height: 40px;
+	background-color: rgba(220,181,166,.5);
+	margin: 15px auto;
+}
+.myinfo>.con>div>span{display: inline-block;font: 16px/40px '微软雅黑';color: #333;}
+.myinfo>.con>div>span:nth-child(1){
+	width: 100px;height: 40px;
+	margin-left: 50px;margin-right: 20px;
+}
+/* .myinfo>.con>div>span:nth-child(2){width: 300px;height: 40px;} */

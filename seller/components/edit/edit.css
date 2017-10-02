@@ -1,0 +1,54 @@
+.edit-header{
+	position: absolute;
+	left:0;top:0;
+	background-color: #dcb5a6;
+	width: 100%;
+}
+.edit-header>span{
+	float:right;
+	color: #fff;
+	margin-right: 10px;
+	font-size: 28px;
+	cursor: pointer;
+}
+.edit-header>span:hover{
+	background-color: #f00;
+}
+.edit-header>h2{
+	margin-left: 20px;
+	color: #fff;
+	letter-spacing: 5px;
+}
+.edit-body{
+	margin-top:15px;
+}
+.edit-body>ul{
+	list-style: none;
+	/*width: 300px;*/
+}
+.edit-body>ul>li{
+	overflow: hidden;
+}
+.edit-body>ul>li>label{
+	width:80px;
+	height: 50px;
+	text-align: right;
+	line-height: 30px;
+	padding-right: 10px;
+}
+.edit-body>ul>li>input{
+	text-indent: 1em;
+	height: 20px;
+}
+.edit-footer{
+	margin-top:15px;
+	text-align: center;
+}
+.edit-footer>button{
+	padding: 5px 10px;
+	background-color: #dcb5a6;
+	margin-right: 20px;
+	color: #fff;
+	cursor:pointer;
+	font-size: 18px;
+}

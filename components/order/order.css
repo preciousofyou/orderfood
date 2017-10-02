@@ -1,0 +1,72 @@
+.order{
+	width: 1200px;
+	/* border: 1px solid black; */
+	margin: 0 auto;
+}
+.order>span{
+	width: 1200px;
+	height: 55px;
+	display: inline-block;
+	background-color: rgba(220,181,166,.6);
+	/* margin-left: 100px; */
+	text-indent: 2em;
+	font: 24px/55px "微软雅黑";
+	/* font-weight: bold; */
+	margin-bottom: 15px;
+}
+.order div{}
+.order div input:first-child{width: 120px;height: 18px;}
+.order div input:last-child{height: 24px;}
+.order ul{
+	width: 1200px;
+	background-color: rgba(220,181,166,.6);
+	/* margin-left: 100px; */
+}
+.order ul li{
+	display: inline-block;
+	height: 100px;
+	width: 100%;
+	/* border: 1px solid #ccc; */
+	margin-bottom: 10px;
+	position: relative;
+}
+.order ul li img{
+	width: 250px;height: 100px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-left: 20px;
+} 
+
+.order ul li .intro{
+	display: inline-block;
+	width: 250px;height: 30px;
+	font: 18px "微软雅黑";
+	margin-left:100px;
+	position: absolute;
+	left: 260px;top: 40px;
+}
+.order ul li .price{
+	display: inline-block;
+	margin-top:30px;
+	width: 80px;height: 40px;
+	font: 16px/40px "微软雅黑";
+	color: #2A2828;
+	margin-left:200px;
+	position: absolute;
+	left: 600px;top: 6px;
+}
+.order ul li a{
+	display: inline-block;
+	float: right;margin-right:30px;
+	margin-top:36px;
+	width: 80px;height: 25px;line-height: 25px;
+	/* position: absolute;
+	right: 15px;bottom: 15px; */
+	font-size: 16px;
+	text-align: center;
+	text-decoration: none;
+	border: 1px solid #ccc;
+	background-color: #faa8a8;
+	color: #fff;
+}
+.order ul li a:hover{background-color: #ff2a00;}

@@ -1,0 +1,138 @@
+*{
+  margin:0 auto; padding:0px;
+  text-align: center;
+  text-decoration:none;  
+}
+ul li{list-style: none;}
+#logo{
+  font-family: '宋体';
+  font-weight: bold;
+  font-size: 36px;
+  left: 25px;
+  top:15px;
+  position: absolute;
+  font-color: #fff;
+}
+.cont_principal { 
+	position:absolute;
+	width:100%;
+	height:100%;  
+	background:url('../img/001.jpg')  center / cover;
+}
+#wizard {
+	border:3px solid #888;
+	font-size:12px;
+	height:400px;
+	width:570px;
+	left: 50%;
+	top: 50%;
+	margin: -200px 0 0 -285px;
+	overflow:hidden;
+	position:absolute;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+}
+#wizard:hover{
+	box-shadow:1px 1px 1000px 1000px rgba(0,0,0,0.5),0px 0px 20px 4px rgba(0,0,0,0.4);
+}
+#wizard{
+  bottom:0px;
+  width:570px;
+  -webkit-transition: all 500ms;
+  -o-transition: all 500ms;
+  transition: all 500ms;
+}
+#wizard .items{
+	width:2000px; 
+	clear:both; 
+	position:absolute;
+}
+#wizard .right{float:right;}
+#wizard #status{
+	height:35px;
+	background:#123;
+	padding-left:25px !important;
+}
+#status li{
+	float:left;
+	color:#fff;
+	padding:10px 30px;
+}
+#status li.active{
+	background-color:#369;
+	font-weight:normal;
+}
+.input{
+	width:200px;
+	height:20px; 
+	margin:10px auto; 
+	line-height:20px; 
+	border:1px solid #d3d3d3; 
+	padding:2px
+}
+body{text-align: center;}
+.check{
+	font-family: '微软雅黑';
+	font-size: 15px;
+	position: absolute;
+	bottom: 20%;
+	width: 520px;
+	margin: 0 auto;
+}
+.check> a:hover{
+	font-weight: bold;
+	color: #123;
+}
+.page{
+	padding:20px 30px;
+	width:500px;
+	float:left;
+	position: relative;
+}
+.page h3{
+	height:42px; 
+	font-size:16px; 
+	border-bottom:3px dotted #ccc; 
+	margin-bottom:20px; 
+	padding-bottom:5px
+}
+.page h3 em{
+	font-size:20px; 
+	font-weight:500; 
+	font-style:normal
+}
+.page h4{
+	font-size: 40px;
+	font-weight: 500;
+}
+.page p{line-height:24px;}
+.page p label{
+	font-size:14px; 
+	display:block;
+}
+.btn_nav{
+	height:36px; 
+	line-height:36px; 
+	margin:20px auto;
+}
+.prev,.next{
+	width:100px; 
+	height:32px; 
+	background-color: #369;
+	line-height:32px;
+	color: #fff;
+	cursor:pointer
+}
+.prev:hover{
+	transform: scale(1.2);
+}
+.next:hover{
+	transform: scale(1.2);
+}
+#footer{
+  width: 100%;
+  position: absolute;
+  bottom: 5px;
+  font-size: 15px;
+  color: #fff
+}
